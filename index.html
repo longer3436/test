@@ -14,7 +14,7 @@
 			console.log(navigator)
 			if ('serviceWorker' in navigator) {
 				// alert('serviceWorker')
-		  navigator.serviceWorker.register('/test/sw.js', { scope: '/test/' }).then(function(reg) {
+		  navigator.serviceWorker.register('/sw.js').then(function(reg) {
 		    // registration worked
 		    console.log('Registration succeeded. Scope is ' + reg.scope);
 		  }).catch(function(error) {
