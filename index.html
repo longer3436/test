@@ -12,7 +12,7 @@
     <script>
 			console.log(navigator)
 			if ('serviceWorker' in navigator) {
-				console.log('serviceWorker')
+				alert('serviceWorker')
 		  navigator.serviceWorker.register('./sw.js').then(function(reg) {
 		    // registration worked
 		    console.log('Registration succeeded. Scope is ' + reg.scope);
