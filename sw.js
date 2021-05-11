@@ -1,8 +1,10 @@
+var ver = '1.0.1'
+
 self.addEventListener('install', function(event) {
     event.waitUntil(
-      caches.open('v1').then(function(cache) {
+      caches.open(ver).then(function(cache) {
         return cache.addAll([
-          '/static/img/asdf.jpg'
+          '/test/static/img/asdf.jpg'
         ]);
       })
     );
@@ -22,12 +24,12 @@ self.addEventListener('install', function(event) {
           // and serve second one
           let responseClone = response.clone();
           
-          caches.open('v1').then(function (cache) {
+          caches.open(ver).then(function (cache) {
             cache.put(event.request, responseClone);
           });
           return response;
         }).catch(function () {
-          return caches.match('/static/img/asdf.jpg');
+          return caches.match('/test/static/img/asdf.jpg');
         });
       }
     }));
